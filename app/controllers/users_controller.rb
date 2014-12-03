@@ -16,6 +16,29 @@ class UsersController < ApplicationController
     end
   end
 
+  def create_with_twitter
+    auth_hash = request.env['omniauth.auth']
+    @user = User.new(name: auth_hash.info.name, uid: auth_hash.uid)
+    @user.save
+    session[:user_id] = @user.id
+    raise
+    redirect_to "/users/twitter_confirm"
+  end
+
+  def confirm_with_twitter
+    @user = current_user
+    if @user.update(params.require(:user).permit(:email))
+      redirect_to "/"
+    end
+  end
+
+  def finalize_twitter
+    @user = current_user
+    if @user.update(params.require(:user).permit(:email))
+      redirect_to "/"
+    end
+  end
+
 
 
   private
