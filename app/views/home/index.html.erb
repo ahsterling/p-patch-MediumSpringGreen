@@ -1,12 +1,13 @@
 
 <h1>PeaPatchPlannnneneeerrrrr</h1>
 
+<%= bootstrap_form_for @login_user, url: login_path do |f|%>
 
-<%= bootstrap_form_for @login_user do |f|%>
-
-<div><%= f.text_field :name, label: "Username", icon: "user" %></div>
+<div><%= f.text_field :name %></div>
 
 <div><%= f.password_field :password %></div>
+
+<div><%= f.submit %></div>
 
 <% end %>
 </div>
