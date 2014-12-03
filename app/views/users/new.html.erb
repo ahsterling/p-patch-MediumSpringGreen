@@ -1,17 +1,17 @@
+<div class="login">
+<%= bootstrap_form_for @user do |f| %>
 
-<%= form_for @user do |f| %>
-<div><%= f.label :username %></div>
-<div><%= f.text_field :name%></div>
+<div><%= f.text_field :name, label: "Username"%></div>
 
-<div><%= f.label :email %></div>
+
 <div><%= f.text_field :email%></div>
 
-<div><%= f.label :password %></div>
+
 <div><%= f.password_field :password %></div>
 
-<div><%= f.label :password_confirmation %></div>
 <div><%= f.password_field :password_confirmation %></div>
 
 <div><%= f.submit %></div>
 
 <% end %>
+</div>
