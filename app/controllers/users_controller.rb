@@ -10,11 +10,9 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       redirect_to root_path
-      raise
     else
       render :new
     end
-
   end
 
 
