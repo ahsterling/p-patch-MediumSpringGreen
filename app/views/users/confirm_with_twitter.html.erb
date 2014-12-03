@@ -1,7 +1,7 @@
-<h1>Finish your registration:</h1>
+<h1>Complete your registration:</h1>
 
-<%= form_for @user, url: "/users/twitter_confirm", method: :put do |f| %>
-  <%= f.label :email %>
+<%= bootstrap_form_for @user, url: "/users/twitter_confirm", method: :put do |f| %>
+  <%= f.text_field :name, value: @user.name %>
   <%= f.text_field :email %>
   <%= f.submit %>
 <% end %>

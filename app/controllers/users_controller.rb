@@ -31,7 +31,7 @@ class UsersController < ApplicationController
 
   def finalize_twitter
     @user = current_user
-    if @user.update(params.require(:user).permit(:email))
+    if @user.update(params.require(:user).permit(:name, :email))
       redirect_to "/"
     end
   end
