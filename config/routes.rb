@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-
-
+  get "/auth/:developer/callback", to: "users#create_with_twitter"
+  post "/auth/:developer/callback", to: "users#create_with_twitter"
 
   get "/users/new",   to: "users#new", as: :users
   post "/users/new",  to: "users#create"
+
+  get "/users/twitter_confirm", to: "users#confirm_with_twitter"
+  put "/users/twitter_confirm", to: "users#finalize_twitter"
 
   root "home#index"
 
