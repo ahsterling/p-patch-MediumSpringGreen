@@ -1,6 +1,6 @@
 <h1>Finish your registration:</h1>
 
-<%= form_for @user, url: "users/twitter_confirm", method: :post do |f| %>
+<%= form_for @user, url: "/users/twitter_confirm", method: :put do |f| %>
   <%= f.label :email %>
   <%= f.text_field :email %>
   <%= f.submit %>

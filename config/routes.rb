@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post "/users/new",  to: "users#create"
 
   get "/users/twitter_confirm", to: "users#confirm_with_twitter"
-  put "/users/twitter_confirm", to: "users#finalize"
+  put "/users/twitter_confirm", to: "users#finalize_twitter"
 
   root "home#index"
 
