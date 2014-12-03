@@ -1,5 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe UsersController, :type => :controller do
+describe UsersController do
+  describe 'GET #confirm_with_twitter' do
+
+
+  end
 
 end

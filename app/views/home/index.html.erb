@@ -1,3 +1,4 @@
+
 <h1>PeaPatchPlannnneneeerrrrr</h1>
 
 
@@ -5,10 +6,15 @@
 
 <div><%= f.text_field :name, label: "Username", icon: "user" %></div>
 
-
 <div><%= f.password_field :password %></div>
-
-<div><%= f.submit %></div>
 
 <% end %>
 </div>
+
+
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, class: name %>
+<% end %>
+
+
+<%= link_to "Sign Up with Twitter", "auth/twitter" , class: "btn btn-primary" %>
