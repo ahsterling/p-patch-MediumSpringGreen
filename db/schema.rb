@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(version: 20141203001905) do
     t.datetime "updated_at"
   end
 
+  create_table "events", force: true do |t|
+    t.datetime "date"
+    t.integer  "user_id"
+    t.string   "title"
+    t.string   "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "posts", force: true do |t|
     t.text     "content"
     t.string   "title"
@@ -36,6 +45,16 @@ ActiveRecord::Schema.define(version: 20141203001905) do
     t.string   "type"
     t.string   "status"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.string   "uid"
+    t.string   "type"
+    t.string   "email"
+    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
