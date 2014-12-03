@@ -19,10 +19,19 @@ class UsersController < ApplicationController
 
   def create_with_twitter
     auth_hash = request.env['omniauth.auth']
-    @user = User.new(name: auth_hash.info.name, uid: auth_hash.uid)
-    @user.save
-    session[:user_id] = @user.id
-    redirect_to "/users/twitter_confirm"
+    if User.find_by(uid: auth_hash.uid)
+      @user = User.find_by(uid: auth_hash.uid)
+      session[:user_id] = @user.id
+      redirect_to root_path, notice: "User already exists with this account!"
+    else
+      @user = User.new(name: auth_hash.info.name, uid: auth_hash.uid)
+      if @user.save
+        session[:user_id] = @user.id
+        redirect_to "/users/twitter_confirm"
+      else
+        redirect_to root_path, notice: "Sorry, an error ocurred!"
+      end
+    end
   end
 
   def confirm_with_twitter
@@ -31,8 +40,11 @@ class UsersController < ApplicationController
 
   def finalize_twitter
     @user = current_user
+    @user.twitter_signup = true
     if @user.update(params.require(:user).permit(:name, :email))
-      redirect_to "/"
+      redirect_to root_path, notice: "You have signed up with twitter!"
+    else
+      render :finalize_twitter
     end
   end
 

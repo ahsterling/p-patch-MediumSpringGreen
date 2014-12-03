@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get "/auth/:developer/callback", to: "users#create_with_twitter"
-
   post "/auth/:developer/callback", to: "users#create_with_twitter"
+
   get "/users/new",   to: "users#new", as: :users
   post "/users/new",  to: "users#create"
 
