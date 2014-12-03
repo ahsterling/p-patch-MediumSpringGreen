@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get "/users/new",   to: "users#new", as: :users
   post "/users/new",  to: "users#create"
 
+  get "home/login",   to: "home#login", as: :login
+
+
   root "home#index"
 
 
