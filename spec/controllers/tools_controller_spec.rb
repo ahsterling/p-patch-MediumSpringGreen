@@ -59,5 +59,11 @@ describe ToolsController do
       expect(Tool.find(tool.id).user_id).to eq User.find(user.id).id
     end
 
+    it 'changes status from out to in' do
+      tool = Tool.create(name: "bucket", status: "out")
+      put :update, id: tool.id, status: "in"
+      expect(Tool.find(tool.id).status).to eq "in"
+    end
+
   end
 end

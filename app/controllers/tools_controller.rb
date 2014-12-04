@@ -7,7 +7,7 @@ class ToolsController < ApplicationController
 
   def update
     @tool = Tool.find(params[:id])
-    if @tool.update(status: "out", user_id: session[:user_id])
+    if @tool.update(status: params[:status], user_id: session[:user_id])
       redirect_to tools_path
     end
   end
