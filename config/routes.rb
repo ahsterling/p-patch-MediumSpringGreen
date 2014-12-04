@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   post "home/login",   to: "home#login"
 
   get "/tools",       to: "tools#index", as: :tools
-
+  put "/tools/:id",   to: "tools#update", as: :tool
   root "home#index"
 
 
