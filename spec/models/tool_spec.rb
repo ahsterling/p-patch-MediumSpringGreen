@@ -31,6 +31,13 @@ describe Tool do
       tool.set_user_id(user.id)
       expect(Tool.find(tool.id).user_id).to eq user.id
     end
+
+    it 'updates user_id to current users id when tool is checked out' do
+      user = User.create
+      tool = Tool.create(name: "shovel", status: "in")
+      tool.set_user_id(user.id)
+      expect(Tool.find(tool.id).user_id).to eq nil
+    end
   end
   # when a user clicks "check me out", the status changes to "out" and the "user_id" is set
 
