@@ -2,6 +2,12 @@ require 'rails_helper'
 
 describe ToolsController do
   describe 'GET #index' do
+
+    # renders the page
+    # returns a successful http response
+    # sets instance variable @available_tools
+    # sets instance variable @unavailable_tools
+    
     it 'is successful' do
       get :index
       expect(response.status).to eq 200
