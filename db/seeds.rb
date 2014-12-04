@@ -9,3 +9,10 @@
 10.times do
   Tool.create(name: Faker::Commerce.product_name, status: "in")
 end
+
+10.times do
+  Post.create(
+    content: Faker::Lorem.paragraph,
+    title: Faker::Hacker.ingverb + " " + Faker::Hacker.noun
+  )
+end

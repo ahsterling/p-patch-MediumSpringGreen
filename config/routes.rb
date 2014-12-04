@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   put "/tools/:id",   to: "tools#update", as: :tool
 
   get "/posts",       to: "posts#index", as: :posts
+  get "/posts/:id",   to: "posts#show", as: :post_path
   root "home#index"
 
 
