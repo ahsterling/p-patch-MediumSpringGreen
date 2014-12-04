@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 4 }, confirmation: true, if: :password_signup
 
   validates :email, presence: true, confirmation: true, if: :twitter_signup
-  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, confirmation: true,
+    if: :password_signup,
+    if: :twitter_signup
 
 end
