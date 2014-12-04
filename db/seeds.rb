@@ -10,6 +10,12 @@
   Tool.create(name: Faker::Commerce.product_name, status: "in")
 end
 
+
+
+10.times do
+  Event.create(date: Faker::Date.forward(23), title: Faker::App.name, content: "This is an event")
+end
+
 10.times do
   Post.create(
     content: Faker::Lorem.paragraph,

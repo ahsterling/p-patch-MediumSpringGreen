@@ -1,0 +1,26 @@
+
+<%= bootstrap_form_for @meeting do |f| %>
+<%= f.text_field :title %>
+
+<%= f.text_area :content %>
+
+<%= f.submit %>
+<% end %>
+
+
+
+<%= month_calendar events: @meetings do |date, meetings| %>
+<%= date %>
+
+  <% meetings.each do |meeting| %>
+  <div class ="event_btn">  <div class="btn-group">
+    <button type="button" class="btn btn-success btn-xs dropdown-toggle " data-toggle="dropdown" aria-expanded="false">
+      <%= meeting.title %> <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+      <p><%= meeting.content %></p>
+    </ul>
+  </div>
+</div>
+  <% end %>
+<% end %>
