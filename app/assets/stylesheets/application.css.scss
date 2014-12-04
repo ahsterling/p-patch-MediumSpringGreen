@@ -1,12 +1,22 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+// * {
+//   border: 1px solid pink;
+// }
 
 body {
   margin: 15px;
+
 }
 
 .login {
-
+  margin: 10px;
   width: 200px;
+}
+
+.login_field {
+  display:inline-block;
+
+
 }
