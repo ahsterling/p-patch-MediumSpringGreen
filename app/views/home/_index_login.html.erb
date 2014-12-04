@@ -1,6 +1,5 @@
 
 
-
 <%= bootstrap_form_for @login_user, url: login_path do |f|%>
 
 <div >
@@ -12,7 +11,7 @@
 </div>
 
 
-<div>Or log in with: <%= link_to image_tag("twitter-48.png", class: "twitter img-circle"), "auth/twitter"  %></div>
+<div>Or log in with: <%= link_to image_tag("twitter-48.png", class: "twitter img-circle"), "/auth/twitter"  %></div>
 <br>
 
 
@@ -21,3 +20,5 @@
 <% flash.each do |name, msg| %>
   <%= content_tag :div, msg, class: name %>
 <% end %>
+
+<%= button_to "Logout", logout_path, :method => :delete, class: "btn btn-danger" %>
