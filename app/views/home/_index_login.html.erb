@@ -1,9 +1,16 @@
+<div class="header">
 
 
+<div class = "col-sm-15">
+  <div class="login"><% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, class: name %>
+  <% end %></div>
+<div class= "login">
 
 <% if session[:user_id] != nil  %>
 
   <%= button_to "Logout", logout_path, :method => :delete, class: "btn    btn-danger" %>
+
 
 <% else  %>
 
@@ -13,20 +20,16 @@
     <div class = "login_field"><%= f.text_field :name %></div>
     <div class = "login_field"><%= f.password_field :password %></div>
     <div class = "login_field" ><%= f.submit "Login" %></div>
-
     <% end %>
+    <div class = "login_field"><p><%= link_to image_tag("twitter_signin.png"), "/auth/twitter"  %></p></div>
+
   </div>
-
-
-  <div>Or log in with: <%= link_to image_tag("twitter-48.png", class: "twitter img-circle"), "/auth/twitter"  %></div>
-  <br>
-
 
   <div><%= link_to "Create a new account", "users/new" , class: "btn btn-primary" %></div>
 
 
-<% end  %>
 
-<% flash.each do |name, msg| %>
-<%= content_tag :div, msg, class: name %>
-<% end %>
+<% end  %>
+</div>
+</div>
+</div>
