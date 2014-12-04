@@ -26,7 +26,13 @@
     <tr>
       <td><%= tool.name %></td>
       <td><%= tool.status %></td>
-      <td><%= tool.user_id %></td>
+      <td>
+        <% if tool.user_id == current_user.id %>
+          <%= button_to "Return this tool!", tool_path(tool.id), method: :put, class: "btn btn-danger", params: {status: "in"} %>
+        <% else %>
+          <%= tool.user_id %>
+        <% end %>
+      </td>
     </tr>
   <% end %>
 </table>

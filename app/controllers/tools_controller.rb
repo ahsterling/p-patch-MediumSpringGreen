@@ -11,7 +11,7 @@ class ToolsController < ApplicationController
       @tool.set_user_id(session[:user_id])
       redirect_to tools_path, notice: "#{@tool.name} successfully checked out!"
     else
-      redirect_to tools_path, notice: "@tool did not update with status"
+      redirect_to tools_path, notice: "#{@tool.name} did not update with status"
     end
   end
 end
