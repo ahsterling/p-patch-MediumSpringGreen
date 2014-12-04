@@ -37,4 +37,19 @@ describe ToolsController do
 
   end
 
+  describe 'PUT #update' do
+
+    it 'redirects to tools_path when successful' do
+      tool1 = Tool.create(name: "bucket", status: "in")
+      put :update, id: tool1.id, status: "out"
+      expect(response.status).to eq 302
+    end
+
+    it 'changes status from in to out' do
+      tool1 = Tool.create(name: "bucket", status: "in")
+      put :update, id: tool1.id, status: "out"
+      expect(Tool.find(tool1.id).status).to eq "out"
+    end
+
+  end
 end

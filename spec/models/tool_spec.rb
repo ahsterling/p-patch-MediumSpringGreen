@@ -20,4 +20,8 @@ describe Tool do
     expect(Tool.new(name: "shovel", status: "cookie")).to_not be_valid
   end
 
+  # when a user clicks "check me out", the status changes to "out" and the "user_id" is set
+
+  
+
 end
