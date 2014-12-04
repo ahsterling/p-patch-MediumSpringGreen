@@ -1,24 +1,31 @@
 
 
-<%= bootstrap_form_for @login_user, url: login_path do |f|%>
 
-<div >
-  <div class = "login_field"><%= f.text_field :name %></div>
-  <div class = "login_field"><%= f.password_field :password %></div>
-  <div class = "login_field" ><%= f.submit "Login" %></div>
+<% if session[:user_id] != nil  %>
 
-  <% end %>
-</div>
+  <%= button_to "Logout", logout_path, :method => :delete, class: "btn    btn-danger" %>
+
+<% else  %>
+
+  <%= bootstrap_form_for @login_user, url: login_path do |f|%>
+
+  <div >
+    <div class = "login_field"><%= f.text_field :name %></div>
+    <div class = "login_field"><%= f.password_field :password %></div>
+    <div class = "login_field" ><%= f.submit "Login" %></div>
+
+    <% end %>
+  </div>
 
 
-<div>Or log in with: <%= link_to image_tag("twitter-48.png", class: "twitter img-circle"), "/auth/twitter"  %></div>
-<br>
+  <div>Or log in with: <%= link_to image_tag("twitter-48.png", class: "twitter img-circle"), "/auth/twitter"  %></div>
+  <br>
 
 
-<div><%= link_to "Create a new account", "users/new" , class: "btn btn-primary" %></div>
+  <div><%= link_to "Create a new account", "users/new" , class: "btn btn-primary" %></div>
 
-<% flash.each do |name, msg| %>
+  <% flash.each do |name, msg| %>
   <%= content_tag :div, msg, class: name %>
-<% end %>
+  <% end %>
 
-<%= button_to "Logout", logout_path, :method => :delete, class: "btn btn-danger" %>
+<% end  %>

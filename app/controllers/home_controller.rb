@@ -25,7 +25,6 @@ class HomeController < ApplicationController
   end
 
   def destroy
-    raise
     log_out
     redirect_to root_path
   end
