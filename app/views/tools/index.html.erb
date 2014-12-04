@@ -1,38 +1,46 @@
-
-<h3>Currently available tools:</h3>
-<table class="table table-striped">
-  <tr>
-    <th>Tool Name</th>
-    <th>Status</th>
-    <th>Check Out</th>
-  </tr>
-  <% @available_tools.each do |tool| %>
+<div class = "container">
+  <h3>Currently available tools:</h3>
+  <table class="table table-striped">
     <tr>
-      <td><%= tool.name %></td>
-      <td><%= tool.status %></td>
-      <td><%= button_to "Check me out!", tool_path(tool.id), method: :put, class: "btn btn-info", params: {status: "out"} %></td>
+      <th>Tool Name</th>
+      <th>Status</th>
+      <th>Check Out</th>
     </tr>
-  <% end %>
-</table>
+    <% @available_tools.each do |tool| %>
+      <tr>
+        <td><%= tool.name %></td>
+        <td><%= tool.status %></td>
+        <td>
+          <% if current_user != nil %>
+            <%= button_to "Check me out!", tool_path(tool.id), method: :put, class: "btn btn-info", params: {status: "out"} %>
+          <% else %>
+            Sign up for an account to reserve tools!
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
 
-<h3>Unavailable tools</h3>
-<table class="table table-striped">
-  <tr>
-    <th>Tool Name</th>
-    <th>Status</th>
-    <th>Checked out to:</th>
-  </tr>
-  <% @unavailable_tools.each do |tool| %>
+  <h3>Unavailable tools</h3>
+  <table class="table table-striped">
     <tr>
-      <td><%= tool.name %></td>
-      <td><%= tool.status %></td>
-      <td>
-        <% if tool.user_id == current_user.id %>
+      <th>Tool Name</th>
+      <th>Status</th>
+      <th>Checked out to:</th>
+    </tr>
+    <% @unavailable_tools.each do |tool| %>
+      <tr>
+        <td><%= tool.name %></td>
+        <td><%= tool.status %></td>
+        <td>
+
+        <% if current_user != nil && tool.user_id == current_user.id %>
           <%= button_to "Return this tool!", tool_path(tool.id), method: :put, class: "btn btn-danger", params: {status: "in"} %>
         <% else %>
           <%= tool.user_id %>
         <% end %>
-      </td>
-    </tr>
-  <% end %>
-</table>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
