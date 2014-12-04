@@ -10,8 +10,21 @@
     <tr>
       <td><%= tool.name %></td>
       <td><%= tool.status %></td>
-      <td>Reserve</td>
+      <td><%= button_to "Check me out!", tools_path, method: :get, class: "btn btn-info" %></td>
     </tr>
   <% end %>
+</table>
 
+<h3>Unavailable tools</h3>
+<table class="table table-striped">
+  <tr>
+    <th>Tool Name</th>
+    <th>Status</th>
+  </tr>
+  <% @unavailable_tools.each do |tool| %>
+  <tr>
+    <td><%= tool.name %></td>
+    <td><%= tool.status %></td>
+  </tr>
+  <% end %>
 </table>
