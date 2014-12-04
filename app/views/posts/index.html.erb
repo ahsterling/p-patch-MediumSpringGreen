@@ -1,0 +1,6 @@
+<div class="container">
+  <h2>News!</h2>
+  <% @posts.each do |post| %>
+    <h3><%= link_to post.title, post_path(post.id) %></h3>
+  <% end %>
+</div>
