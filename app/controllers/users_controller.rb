@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     if User.find_by(uid: auth_hash.uid)
       @user = User.find_by(uid: auth_hash.uid)
       session[:user_id] = @user.id
-      redirect_to root_path, notice: "User already exists with this account!"
+      redirect_to root_path, notice: "You are logged in!"
     else
       @user = User.new(name: auth_hash.info.name, uid: auth_hash.uid)
       if @user.save
