@@ -34,6 +34,14 @@ describe PostsController do
       expect(response).to render_template :show
     end
 
+    it 'assigns a post variable to @post' do
+      post = Post.create(title: "Test_title", content: "here's the content")
+      controller.stub(:post) {[post]}
+      get :show, id: post.id
+      expect(assigns(:post)).to eq post
+
+    end
+
   end
 
 end
