@@ -1,3 +1,17 @@
-<h2>All Tools</h2>
 
 <h3>Currently available tools:</h3>
+<table class="table table-striped">
+  <tr>
+    <th>Tool Name</th>
+    <th>Status</th>
+    <th>Check Out</th>
+  </tr>
+  <% @available_tools.each do |tool| %>
+    <tr>
+      <td><%= tool.name %></td>
+      <td><%= tool.status %></td>
+      <td>Reserve</td>
+    </tr>
+  <% end %>
+
+</table>
