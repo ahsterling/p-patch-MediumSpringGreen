@@ -10,7 +10,7 @@
     <tr>
       <td><%= tool.name %></td>
       <td><%= tool.status %></td>
-      <td><%= button_to "Check me out!", tool_path(tool.id), method: :put, class: "btn btn-info" %></td>
+      <td><%= button_to "Check me out!", tool_path(tool.id), method: :put, class: "btn btn-info", params: {status: "out"} %></td>
     </tr>
   <% end %>
 </table>

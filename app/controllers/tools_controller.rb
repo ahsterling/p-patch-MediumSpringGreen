@@ -8,12 +8,10 @@ class ToolsController < ApplicationController
   def update
     @tool = Tool.find(params[:id])
     if @tool.update(status: params[:status])
-      if @tool.status == "out"
-        @tool.update(user_id: session[:user_id])
-      elsif @tool.status == "in"
-        @tool.update(user_id: nil)
-      end
-      redirect_to tools_path
+      @tool.set_user_id(session[:user_id])
+      redirect_to tools_path, notice: "#{@tool.name} successfully checked out!"
+    else
+      redirect_to tools_path, notice: "@tool did not update with status"
     end
   end
 end
