@@ -53,6 +53,9 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'bootstrap_form'
 
+gem "simple_calendar", "~> 1.1.0"
+
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

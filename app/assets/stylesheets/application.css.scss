@@ -25,16 +25,45 @@ body {
   margin: 15px;
   text-align: right;
 
-
-
 }
 
 .login_field {
   display:inline-block;
-
-
 }
 
 .twitter {
   background-color: #24c6df;
+}
+
+.prev-month {
+  background-color: grey;
+  opacity: .7;
+}
+
+.next-month {
+  background-color: grey;
+  opacity: .7;
+}
+.day {
+  padding: 5px;
+  height: 100px;
+  width: 150px;
+  border: 1px solid black ;
+  vertical-align: text-top;
+
+}
+
+.event_btn {
+  margin-bottom: 2px;
+  display: block;
+
+}
+
+.dropdown-menu p{
+  margin-left: 5px;
+
+}
+
+.meetings {
+  color: green;
 }
