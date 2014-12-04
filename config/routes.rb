@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get "home/login",   to: "home#login", as: :login
   post "home/login",   to: "home#login"
 
+  get "/tools",       to: "tools#index", as: :tools
 
   root "home#index"
 
