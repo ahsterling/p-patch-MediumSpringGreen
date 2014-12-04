@@ -20,11 +20,13 @@
   <tr>
     <th>Tool Name</th>
     <th>Status</th>
+    <th>Checked out to:</th>
   </tr>
   <% @unavailable_tools.each do |tool| %>
     <tr>
       <td><%= tool.name %></td>
       <td><%= tool.status %></td>
+      <td><%= tool.user_id %></td>
     </tr>
   <% end %>
 </table>
