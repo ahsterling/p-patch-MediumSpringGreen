@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
   get "/tools",       to: "tools#index", as: :tools
   put "/tools/:id",   to: "tools#update", as: :tool
+
+  get "/posts",       to: "posts#index", as: :posts
   root "home#index"
 
 
