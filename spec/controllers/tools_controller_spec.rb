@@ -51,5 +51,13 @@ describe ToolsController do
       expect(Tool.find(tool1.id).status).to eq "out"
     end
 
+    it 'sets the user_id to the logged_in users id' do
+      tool = Tool.create(name: "bucket", status: "in")
+      user = User.create()
+      session[:user_id] = user.id
+      put :update, id: tool.id, status: "out"
+      expect(Tool.find(tool.id).user_id).to eq User.find(user.id).id
+    end
+
   end
 end
