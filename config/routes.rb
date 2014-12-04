@@ -6,9 +6,13 @@ Rails.application.routes.draw do
   put "/users/twitter_confirm", to: "users#finalize_twitter"
 
 
+
+
+
   get "/users/new",   to: "users#new", as: :users
   post "/users/new",  to: "users#create"
 
+  delete "/",         to: "home#destroy", as: :logout
 
   get "home/login",   to: "home#login", as: :login
   post "home/login",   to: "home#login"
