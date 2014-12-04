@@ -5,7 +5,7 @@ describe Tool do
   # has an attribute of kind
 
   it 'is valid with a kind and status' do
-    expect(Tool.new(kind: "hammer", status: "in")).to be_valid
+    expect(Tool.new(name: "hammer", status: "in")).to be_valid
   end
 
   it 'is invalid without a kind' do
@@ -13,11 +13,11 @@ describe Tool do
   end
 
   it 'is invalid without a status' do
-    expect(Tool.new(kind: "wheelbarrow")).to_not be_valid
+    expect(Tool.new(name: "wheelbarrow")).to_not be_valid
   end
 
   it 'is invalid if status is not "in" or "out"' do
-    expect(Tool.new(kind: "shovel", status: "cookie")).to_not be_valid
+    expect(Tool.new(name: "shovel", status: "cookie")).to_not be_valid
   end
 
 end
