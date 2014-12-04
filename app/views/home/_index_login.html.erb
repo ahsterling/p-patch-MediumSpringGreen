@@ -1,0 +1,24 @@
+
+
+
+<%= bootstrap_form_for @login_user, url: login_path do |f|%>
+
+<div >
+  <div class = "login_field"><%= f.text_field :name %></div>
+  <div class = "login_field"><%= f.password_field :password %></div>
+  <div class = "login_field" ><%= f.submit "Login" %></div>
+
+
+  <% end %>
+</div>
+
+
+<% flash.each do |name, msg| %>
+<%= content_tag :div, msg, class: name %>
+<% end %>
+
+
+<div><%= link_to "Sign Up with Twitter", "auth/twitter" , class: "btn btn-primary" %></div>
+<br>
+
+<div><%= link_to "Create a new account", "users/new" , class: "btn btn-primary" %></div>
