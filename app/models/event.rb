@@ -10,4 +10,10 @@ class Event < ActiveRecord::Base
 
   # Or set a custom attribute for simple_calendar to sort by
   # has_calendar :attribute => :your_starting_time_column_name
+
+  def self.sort_by_date
+    Event.order(:date)
+  end
+
+
 end

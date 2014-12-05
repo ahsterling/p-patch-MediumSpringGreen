@@ -1,6 +1,8 @@
-<%= @event.date %>
+<%= @event.date.strftime('%m/%d/%Y')%>
 <%= @event.title %>
+<% if @event.user_id != nil%>
 <%= @event.user.name %>
+<% end %>
 
 <% if current_user_match %>
 
