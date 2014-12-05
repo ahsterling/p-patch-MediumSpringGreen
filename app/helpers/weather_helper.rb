@@ -1,32 +1,28 @@
 
 module WeatherHelper
-  def weather_hash
-    HTTParty.get("http://api.openweathermap.org/data/2.5/weather?q=seattle").parsed_response
+  def get_weather
+    time = DateTime.parse($redis.get("time_of_call"))
+    if Time.now - time >= 60
+      weather = Wunderground.new(ENV["WUNDERGROUND_KEY"]).conditions_for("WA/Seattle")
+      $redis.set("temperature", weather['current_observation']['temp_f'])
+      $redis.set("description", weather['current_observation']['weather'])
+      $redis.set("icon", weather['current_observation']['icon_url'])
+      $redis.set("time_of_call", weather['current_observation']["observation_time_rfc822"])
+    end
   end
 
   def temperature
-    c = weather_hash['main']['temp'] - 273.15
-    (((c * 9) / 5) + 32).to_i
+    get_weather
+    $redis.get("temperature")
   end
 
   def description
-    weather_hash['weather'][0]['main']
-  end
-
-  def detailed_description
-    weather_hash['weather'][0]['description']
-  end
-
-  def humidity
-    weather_hash['main']['humidity']
-  end
-
-  def wind_speed
-    weather_hash['wind']['speed']
+    get_weather
+    $redis.get("description")
   end
 
   def icon
-    icon = weather_hash['weather'][0]['icon']
-    "http://openweathermap.org/img/w/#{icon}.png"
+    get_weather
+    $redis.get("icon")
   end
 end
