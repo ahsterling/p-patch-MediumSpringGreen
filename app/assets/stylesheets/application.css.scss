@@ -8,6 +8,7 @@
 
 body {
   margin: 15px;
+  background-image: url("sweet-peas.jpg");
 
 }
 
@@ -43,9 +44,10 @@ body {
 
 .next-month {
   background-color: grey;
-  opacity: .7;
+
 }
 .day {
+  background-color: white;
   padding: 5px;
   height: 100px;
   width: 150px;
@@ -71,5 +73,11 @@ body {
 
 .new_event{
   width: 200px;
+
+}
+
+#home.panel p{
+  padding: 5px;
+  min-height: 450px;
 
 }
