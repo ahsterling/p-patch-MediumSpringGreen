@@ -3,12 +3,14 @@
     <h3 class="panel-title"><%= link_to "Tools", "/tools"  %></h3>
   </div>
 
-  <% @tools.each do |tool| %>
-    <div class="home-post-link">
-      <%= link_to tool.name, tool_path(tool.id) %>
-    </div>
-  <% end %>
+  <table class="table table-hover">
+    <% @tools.each do |tool| %>
+      <tr>
+        <td><%= link_to tool.name, tool_path(tool.id) %></td>
+        <td><%= tool.status %></td>
+      </tr>
+    <% end %>
+  </table>
 
-  
 
 </div>

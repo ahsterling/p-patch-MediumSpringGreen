@@ -6,13 +6,15 @@
     <table class="table table-hover">
       <% @posts.each do |post| %>
         <tr>
-          <td>
-            <%= link_to post.title, post_path(post.id) %>
-            <%= post.created_at.strftime("%B %d, %Y") %>
-          </td>
+          <td><%= link_to post.title, post_path(post.id) %></td>
+          <td><%= post.created_at.strftime("%B %d, %Y") %><td>
         </tr>
       <% end %>
+      <tr>
+        <td colspan="2"><%= link_to "See More Posts", posts_path, class: "panel-link" %></td>
+      </tr>
     </table>
-      <%= link_to "See More Posts", posts_path, class: "panel-link" %>
+
+
 
   </div>
