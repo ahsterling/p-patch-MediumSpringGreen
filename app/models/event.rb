@@ -13,6 +13,22 @@ class Event < ActiveRecord::Base
 
   def self.sort_by_date
     Event.order(:date)
+
+  end
+
+  def future_event?
+    future_event = []
+    Event.sort_by_date.each do |e|
+      if e.date.future?
+        future_event << e
+      end
+      future_event
+    end
+
+  end
+
+  def ten_future_events
+    future_event?.arr[0..9]
   end
 
 
