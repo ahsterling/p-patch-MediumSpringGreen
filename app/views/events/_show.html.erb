@@ -6,7 +6,7 @@
     <%   @events.each do |meeting| %>
       <tr>
         <td><%= link_to meeting.title, show_event_path(meeting.id)  %>
-          <%=  meeting.date %>
+          <%=  meeting.date.strftime('%m/%d/%Y') %>
           </td>
       </tr>
     <% end %>

@@ -23,7 +23,7 @@
 
 <div class= "calendar_style">
 <%= month_calendar events: @meetings1 do |date, meetings1| %>
-<%= date %>
+<%= date.strftime('%d') %>
 
 <% meetings1.each do |meeting1| %>
 
