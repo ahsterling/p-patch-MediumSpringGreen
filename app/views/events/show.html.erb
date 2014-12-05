@@ -1,0 +1,11 @@
+<%= @event.date %>
+<%= @event.title %>
+<%= @event.user.name %>
+
+<% if current_user_match %>
+
+<%= button_to "Edit", "/events/#{@event.id}/edit", {class: 'btn btn-info'} %>
+
+<% else %>
+<div></div>
+<% end %>
