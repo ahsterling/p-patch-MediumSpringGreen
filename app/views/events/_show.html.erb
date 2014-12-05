@@ -5,7 +5,7 @@
     <table class="table table-hover">
     <%   @events.each do |meeting| %>
       <tr>
-        <td><%=  meeting.title %>
+        <td><%= link_to meeting.title, show_event_path(meeting.id)  %>
           <%=  meeting.date %>
           </td>
       </tr>
