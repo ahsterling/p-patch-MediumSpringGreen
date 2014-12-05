@@ -3,7 +3,7 @@ class HomeController < ApplicationController
 
   def index
     @events = Event.all
-    @posts = Post.all
+    @posts = Post.order(created_at: :desc).limit(5)
     @tools = Tool.all
   end
 

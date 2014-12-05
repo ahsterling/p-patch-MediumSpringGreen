@@ -1,10 +1,14 @@
 <div  class="panel panel-success" id="home">
   <div class="panel-heading">
-    <h3 class="panel-title"><%= link_to "Tools", "/tools to rent"  %></h3>
+    <h3 class="panel-title"><%= link_to "Tools", "/tools"  %></h3>
   </div>
 
   <% @tools.each do |tool| %>
-    <p><%= link_to tool.name, tool_path(tool.id) %></p>
+    <div class="home-post-link">
+      <%= link_to tool.name, tool_path(tool.id) %>
+    </div>
   <% end %>
+
+  
 
 </div>

@@ -3,9 +3,15 @@
       <h3 class="panel-title"><%= link_to "News", "/posts"  %></h3>
     </div>
 
-    <% @posts.each do |post| %>
-      <p><%= link_to post.title, post_path(post.id) %></p>
-      <%= post.created_at %>
-    <% end %>
+      <% @posts.each do |post| %>
+        <div class="home-post-link">
+          <p>
+            <%= link_to post.title.titleize, post_path(post.id) %><br>
+            Posted <%= post.created_at.strftime("%B %d, %Y") %>
+          </p>
+        </div>
+      <% end %>
+
+      <%= link_to "See More Posts", posts_path, class: "panel-link" %>
 
   </div>
