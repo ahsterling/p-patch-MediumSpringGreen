@@ -44,14 +44,12 @@
                      class: "btn btn-sm btn-primary" %>
                    </div>
 
-                   <div class="weather-bar">
-                     <strong>Seattle, WA</strong> |
-                     Current temp: <%= temperature %>° |
-                     <%= image_tag icon, class: "weather-icon" %> |
-                     <%= description %>
-                   </div>
 
             <% end %>
+            <div class="weather-bar">
+              <%= render "/home/weather" %>
+            </div>
+            
           </p>
           </div>
         </div>
