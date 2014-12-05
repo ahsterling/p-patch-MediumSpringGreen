@@ -4,6 +4,8 @@ gem "omniauth"
 gem "omniauth-twitter"
 gem "faker"
 gem 'httparty'
+
+gem 'wunderground'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.5'
 # Use postgresql as the database for Active Record
@@ -56,7 +58,7 @@ gem 'bootstrap_form'
 gem "simple_calendar", "~> 1.1.0"
 
 gem 'jquery-ui-rails'
-
+gem 'redis'
 # Use unicorn as the app server
 # gem 'unicorn'
 
