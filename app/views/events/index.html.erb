@@ -29,9 +29,12 @@
 
 <div class ="event_btn">
    <div class="btn-group">
+     <button type="button" id= "cal_button" class="btn btn-success btn-xs">          <%= link_to meeting1.title, show_event_path(meeting1.id)  %>
+     </button>
      <button type="button" class="btn btn-success btn-xs dropdown-toggle " data-toggle="dropdown" aria-expanded="false">
-    <%= meeting1.title %>
+
       <span class="caret"></span>
+      <span class="sr-only">Toggle Dropdown</span>
     </button>
       <ul class="dropdown-menu" role="menu">
           <p><%= meeting1.content %></p>
@@ -41,3 +44,13 @@
 </div>
 <% end %>
 <% end %>
+
+
+
+<!-- Split button -->
+<div class="btn-group">
+  <button type="button" class="btn btn-danger">Action</button>
+  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+    <span class="caret"></span>
+
+  </button>
