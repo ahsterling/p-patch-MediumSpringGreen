@@ -1,14 +1,13 @@
 <% if session[:user_id] != nil  %>
 
-<div class = "new_event">
-  <%= bootstrap_form_for @meeting do |f| %>
-  <%= f.text_field :title %>
-  <%= f.text_field :date, :id => "event_datepicker"%>
-  <%= f.text_area :content %>
 
-  <%= f.submit %>
+  <%= bootstrap_form_for @meeting do |f| %>
+    <%= f.text_field :title %>
+    <%= f.text_field :date, :id => "event_datepicker"%>
+    <%= f.text_area :content %>
+    <%= f.submit %>
   <% end %>
-</div>
+
 
 
 
@@ -22,20 +21,22 @@
 
 <% end %>
 
-
+<div class= "calendar_style">
 <%= month_calendar events: @meetings1 do |date, meetings1| %>
 <%= date %>
 
 <% meetings1.each do |meeting1| %>
 
-<div class ="event_btn">  <div class="btn-group">
-  <button type="button" class="btn btn-success btn-xs dropdown-toggle " data-toggle="dropdown" aria-expanded="false">
-    <%= meeting1.title %> <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" role="menu">
-    <p><%= meeting1.content %></p>
-  </ul>
-</div>
+<div class ="event_btn">
+   <div class="btn-group">
+     <button type="button" class="btn btn-success btn-xs dropdown-toggle " data-toggle="dropdown" aria-expanded="false">
+    <%= meeting1.title %>
+      <span class="caret"></span>
+    </button>
+      <ul class="dropdown-menu" role="menu">
+          <p><%= meeting1.content %></p>
+      </ul>
+    </div>
 </div>
 <% end %>
 <% end %>
