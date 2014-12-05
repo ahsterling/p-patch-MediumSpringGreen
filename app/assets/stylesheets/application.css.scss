@@ -39,6 +39,8 @@ body {
   background: rgba(255,255,255, .8);
   }
 
+
+
 .login {
   text-align: right;
   padding-bottom: 5px;
@@ -155,12 +157,30 @@ button#cal_button a {
 
 #home.panel p {
   padding: 5px;
-  min-height: 450px;
+  // min-height: 450px;
 
 }
 
 .tools-table {
-  background-color: rgba(186,222,152, .6);
+  background-color: rgba(186,222,152, .9);
   padding: 10px;
   border-radius: 3px;
+}
+
+.home-post-link {
+  margin: 5px;
+}
+
+.home-post-link p {
+  margin-bottom: 0;
+}
+
+.home-post-link .date {
+  float: right;
+  display: inline-block;
+}
+
+.news-article {
+  padding: 10px;
+  background-color: rgba(186,222,152, .9);
 }
