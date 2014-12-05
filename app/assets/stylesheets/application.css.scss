@@ -113,13 +113,26 @@ body {
   color: green;
 }
 
+.weather {
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: white;
+  border-radius: 3px;
+}
+
+.weather h3 {
+  margin-top: 5px;
+}
+
 .new_event{
   width: 200px;
 
 }
 
-#home.panel p{
+#home.panel p {
   padding: 5px;
   min-height: 450px;
+
 
 }
