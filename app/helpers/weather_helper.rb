@@ -16,4 +16,12 @@ module WeatherHelper
   def detailed_description
     weather_hash['weather'][0]['description']
   end
+
+  def humidity
+    weather_hash['main']['humidity']
+  end
+
+  def wind_speed
+    weather_hash['wind']['speed']
+  end
 end
