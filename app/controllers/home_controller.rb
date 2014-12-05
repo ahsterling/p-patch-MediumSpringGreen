@@ -2,9 +2,9 @@ class HomeController < ApplicationController
 
 
   def index
-    @events = Event.all
     @posts = Post.order(created_at: :desc).limit(5)
     @tools = Tool.all
+    @events = Event.sort_by_date
   end
 
 

@@ -38,19 +38,11 @@
     </button>
       <ul class="dropdown-menu" role="menu">
           <p><%= meeting1.content %></p>
-          <%= meeting1.user.name %>
+          <% if meeting1.user_id != nil%>
+            <%= meeting1.user.name %>
+          <% end %>
       </ul>
     </div>
 </div>
 <% end %>
 <% end %>
-
-
-
-<!-- Split button -->
-<div class="btn-group">
-  <button type="button" class="btn btn-danger">Action</button>
-  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-    <span class="caret"></span>
-
-  </button>
