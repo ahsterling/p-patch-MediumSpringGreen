@@ -162,7 +162,7 @@ button#cal_button a {
 }
 
 .tools-table {
-  background-color: rgba(186,222,152, .6);
+  background-color: rgba(186,222,152, .9);
   padding: 10px;
   border-radius: 3px;
 }
@@ -178,4 +178,9 @@ button#cal_button a {
 .home-post-link .date {
   float: right;
   display: inline-block;
+}
+
+.news-article {
+  padding: 10px;
+  background-color: rgba(186,222,152, .9);
 }
