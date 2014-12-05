@@ -44,6 +44,13 @@
                      class: "btn btn-sm btn-primary" %>
                    </div>
 
+                   <div class="weather-bar">
+                     <strong>Weather for Seattle, WA</strong> |
+                     Current temp: <%= temperature %>° |
+                     <%= image_tag icon, class: "weather-icon" %> |
+                     <%= description %>
+                   </div>
+
             <% end %>
           </p>
           </div>
