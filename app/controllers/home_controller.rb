@@ -2,8 +2,9 @@ class HomeController < ApplicationController
 
 
   def index
+    @posts = Post.order(created_at: :desc).limit(10)
+    @tools = Tool.where(status: "in").limit(10)
     @events = Event.sort_by_date
-
   end
 
 
