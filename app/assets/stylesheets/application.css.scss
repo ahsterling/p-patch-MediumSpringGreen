@@ -26,9 +26,21 @@ body {
   float: left;
 }
 
+.navbar-custom {
+  background-color: rgba(223,240,216, .6);
+  border-color: rgba (223,240,216, .6);
+
+
+}
+
+.panel {
+  background: rgba(255,255,255, .8);
+  }
+
 .login {
   margin: 15px;
   text-align: right;
+  padding-bottom: 5px;
 
 }
 
