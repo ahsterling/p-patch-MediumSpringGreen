@@ -78,6 +78,11 @@ body {
 
 }
 
+button#cal_button a {
+  color: white;
+  text-decoration: none;
+}
+
 
 .prev-month {
   background-color: grey;
@@ -86,6 +91,7 @@ body {
 
 .next-month {
   background-color: grey;
+  opacity: .7;
 
 }
 .day {

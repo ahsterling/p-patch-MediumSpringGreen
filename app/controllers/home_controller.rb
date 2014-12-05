@@ -1,10 +1,10 @@
 class HomeController < ApplicationController
 
-  #
-  # def index
-  #   @login_user = User.new
-  #
-  # end
+
+  def index
+    @events = Event.all
+
+  end
 
 
 
