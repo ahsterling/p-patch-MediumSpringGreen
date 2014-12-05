@@ -12,7 +12,10 @@ body {
 
 }
 
-
+.header h1 a{
+  text-decoration: none;
+  color: black;
+}
 .header {
   margin-bottom: 15px;
   width: 100%
@@ -23,9 +26,21 @@ body {
   float: left;
 }
 
+.navbar-custom {
+  background-color: rgba(186,222,152, .6);
+  border-color: rgba (186,222,152, .6);
+
+
+}
+
+.panel {
+  background: rgba(255,255,255, .8);
+  }
+
 .login {
   margin: 15px;
   text-align: right;
+  padding-bottom: 5px;
 
 }
 
