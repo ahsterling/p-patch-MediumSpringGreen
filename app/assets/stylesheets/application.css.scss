@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "jquery-ui";
 
 // * {
 //   border: 1px solid pink;
@@ -66,4 +67,9 @@ body {
 
 .meetings {
   color: green;
+}
+
+.new_event{
+  width: 200px;
+
 }
