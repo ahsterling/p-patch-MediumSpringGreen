@@ -8,11 +8,9 @@ Rails.application.routes.draw do
 
 
   get  "/events",     to: "events#index", as: :events
-  get  "/events/new",     to: "events#new"
+  get  "/events/new", to: "events#new"
   post "/events",     to: "events#create"
-
-
-
+  get "/events/show", to: "events#show"
 
 
   get "/users/new",   to: "users#new", as: :users
