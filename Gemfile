@@ -55,6 +55,7 @@ gem 'bootstrap_form'
 
 gem "simple_calendar", "~> 1.1.0"
 
+gem 'jquery-ui-rails'
 
 # Use unicorn as the app server
 # gem 'unicorn'

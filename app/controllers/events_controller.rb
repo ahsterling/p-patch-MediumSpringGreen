@@ -3,7 +3,7 @@ class EventsController < ApplicationController
 
 
   def index
-    @meetings = Event.all
+    @meetings1 = Event.all
     @meeting = Event.new
   end
 
@@ -13,7 +13,8 @@ class EventsController < ApplicationController
     if @meeting.save
       redirect_to events_path
     else
-      render :new
+      @meetings1 = Event.all
+      render :index
     end
   end
 
