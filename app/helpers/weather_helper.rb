@@ -24,4 +24,9 @@ module WeatherHelper
   def wind_speed
     weather_hash['wind']['speed']
   end
+
+  def icon
+    icon = weather_hash['weather'][0]['icon']
+    "http://openweathermap.org/img/w/#{icon}.png"
+  end
 end
