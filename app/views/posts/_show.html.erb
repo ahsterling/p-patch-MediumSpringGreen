@@ -1,0 +1,11 @@
+  <div  class="panel panel-success" id="home">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= link_to "News", "/posts"  %></h3>
+    </div>
+
+    <% @posts.each do |post| %>
+      <p><%= link_to post.title, post_path(post.id) %></p>
+      <%= post.created_at %>
+    <% end %>
+
+  </div>

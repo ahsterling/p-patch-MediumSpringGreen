@@ -3,7 +3,8 @@ class HomeController < ApplicationController
 
   def index
     @events = Event.all
-
+    @posts = Post.all
+    @tools = Tool.all
   end
 
 
