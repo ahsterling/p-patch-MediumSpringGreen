@@ -9,7 +9,7 @@
 
       <tr>
         <td>
-          <%= @event.date.strftime('%m/%d/%Y')%>
+          <%= @event.date.strftime("%B %d, %Y")%>
         </td>
         <td><%= @event.content %></td>
         <td><% if @event.user_id != nil%>
