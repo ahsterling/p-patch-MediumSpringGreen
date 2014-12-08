@@ -1,58 +1,59 @@
 <div class="header">
+  <div class="login">
+    <nav class="navbar navbar-custom" role="navigation">
+      <div class="container-fluid">
+        <h1> <%= link_to  image_tag("peas.png"), "/"  %> </h1>
+        <p class="navbar-text navbar-right">
 
-    <div class="login">
+        <div class= "login">
+          <% flash.each do |name, msg| %>
+            <%= content_tag :div, msg, class: name %>
+          <% end %>
+        </div>
 
-      <nav class="navbar navbar-custom" role="navigation">
-        <div class="container-fluid">
-          <h1> <%= link_to  image_tag("peas.png"), "/"  %> </h1>
-          <p class="navbar-text navbar-right">
-
-            <div class= "login">
-
-              <% flash.each do |name, msg| %>
-              <%= content_tag :div, msg, class: name %>
-              <% end %></div>
-
-            <% if session[:user_id] != nil  %>
-              <%= button_to "Logout", logout_path,
+        <% if session[:user_id] != nil  %>
+          <%= button_to "Logout", logout_path,
                 :method => :delete,
                 class: "btn btn-danger" %>
-            </div>
 
-            <% else  %>
+        <% else  %>
+          <div class= "login">
+            <%= bootstrap_form_for @login_user, url: login_path do |f|%>
 
-              <%= bootstrap_form_for @login_user, url: login_path do |f|%>
-                <div class= "login">
-                  <div class = "login_field">
-                    <%= f.text_field :name %></div>
-                  <div class = "login_field">
-                    <%= f.password_field :password %></div>
-                  <div class = "login_field" >
-                    <%= f.submit "Login" %></div>
+              <div class = "login_field">
+                <%= f.text_field :name %>
+              </div>
 
-              <% end %>
-                  <div class = "login_field">
+              <div class = "login_field">
+                <%= f.password_field :password %>
+              </div>
 
-                    <p><%= link_to image_tag("twitter_signin.png"),
-                     "/auth/twitter"  %></p></div>
-
-                   </div>
-
-                   <div class ="new_account">
-                     <%= link_to "Create a new account",
-                     users_path,
-                     class: "btn btn-sm btn-primary" %>
-                   </div>
-
+              <div class = "login_field" >
+                <%= f.submit "Login" %>
+              </div>
 
             <% end %>
-            <div class="weather-bar">
-              <%= render "/home/weather" %>
-            </div>
-            
-          </p>
-          </div>
-        </div>
-      </div>
 
-</nav>
+            <div class = "login_field">
+              <p><%= link_to image_tag("twitter_signin.png"),
+                 "/auth/twitter"  %></p>
+            </div>
+
+          </div>
+
+           <div class ="new_account">
+             <%= link_to "Create a new account",
+             users_path,
+             class: "btn btn-sm btn-primary" %>
+           </div>
+
+        <% end %>
+
+        <div class="weather-bar">
+          <%= render "/home/weather" %>
+        </div>
+
+      </div>
+    </nav>
+  </div>
+</div>
