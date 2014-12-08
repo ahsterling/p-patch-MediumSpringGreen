@@ -35,6 +35,11 @@ body {
 
 }
 
+.navbar {
+  background-color: rgba(186,222,152, .6);
+  border: none;
+}
+
 .panel {
   background: rgba(255,255,255, .8);
   }
@@ -52,8 +57,15 @@ body {
 }
 
 .new_account{
-  margin-right: 29px;
+  // margin-right: 29px;
+  margin-top: 28px;
+  margin-left: 5px;
   // display: inline-block;
+}
+
+.twitter-button {
+  margin-top: 28px;
+  margin-left: 2px;
 }
 
 .new_user {
@@ -139,12 +151,13 @@ button#cal_button a {
 }
 
 .weather-bar {
-  margin-right: 32px;
+  margin-right: 15px;
   margin-top: 5px;
+  margin-bottom: 5px;
   padding-left: 3px;
   padding-right: 3px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  // padding-top: 5px;
+  // padding-bottom: 5px;
   background-color: rgba(255,255,255, .8);
   display: inline-block;
   border-radius: 3px;
@@ -192,6 +205,6 @@ button#cal_button a {
 
 #disqus_thread {
   background-color: rgba(186,222,152, .9);
-  color: black;
+  // color: black;
   padding: 10px;
 }
