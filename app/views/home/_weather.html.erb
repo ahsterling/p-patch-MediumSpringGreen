@@ -1,4 +1,8 @@
-<strong>Seattle, WA</strong> |
-Current temp: <%= temperature %>° |
-<%= image_tag icon, class: "weather-icon" %> |
-<%= description %>
+<% if temperature == "unavailable" %>
+  <p>Weather currently unavailable, sorry! </p>
+<% else %>
+  <strong>Seattle, WA</strong> |
+  Current temp: <%= temperature %>° |
+  <%= image_tag icon, class: "weather-icon" %> |
+  <%= description %>
+<% end %>

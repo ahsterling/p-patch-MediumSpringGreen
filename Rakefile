@@ -7,3 +7,7 @@ Rails.application.load_tasks
 
 require "resque/tasks"
 task "resque:setup" => :environment
+
+task "weather" => :environment do
+  WeatherHelper.get_weather
+end
