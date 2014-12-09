@@ -1,4 +1,8 @@
+require 'resque/server'
+
 Rails.application.routes.draw do
+
+  mount Resque::Server, :at => "/resque"
 
   get "/auth/:developer/callback", to: "users#create_with_twitter"
   post "/auth/:developer/callback", to: "users#create_with_twitter"
