@@ -8,6 +8,8 @@ Rails.application.load_tasks
 require "resque/tasks"
 task "resque:setup" => :environment
 
+require "/app/services/weather"
 task "weather" => :environment do
-  WeatherHelper.get_weather
+  puts 'getting weather ....'
+  Weather.get_weather
 end
