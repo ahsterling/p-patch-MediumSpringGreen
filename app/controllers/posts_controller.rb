@@ -15,12 +15,11 @@ class PostsController < ApplicationController
   def create
 
     @post = Post.create(post_params)
-
+    post_id = @post.id
     if @post.save
       Resque.enqueue(EmailJob, post_id)
-      redirect_to posts_path
     end
-
+    redirect_to posts_path
   end
 
   private
