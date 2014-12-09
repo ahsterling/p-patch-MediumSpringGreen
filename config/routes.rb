@@ -44,8 +44,14 @@ Rails.application.routes.draw do
   put "/tools/:id",   to: "tools#update", as: :tool
 
   get "/posts",       to: "posts#index", as: :posts
+  get  "/posts/new",  to: "posts#new"
   get "/posts/:id",   to: "posts#show", as: :post
+  post "/posts",      to: "posts#create"
+
+
   root "home#index"
+
+
 
 
 
