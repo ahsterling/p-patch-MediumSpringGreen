@@ -1,0 +1,21 @@
+<% if session[:user_id] != nil  %>
+
+<%= bootstrap_form_for @post do |f| %>
+<%= f.text_field :title %>
+<%= f.text_area :content %>
+<%= f.hidden_field :user_id, :value => current_user.id%>
+<%= f.submit %>
+<% end %>
+
+
+
+
+
+<% else %>
+
+
+
+<div></div>
+
+
+<% end %>
