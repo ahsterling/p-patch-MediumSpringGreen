@@ -48,6 +48,7 @@ Rails.application.routes.draw do
   get "/posts/:id/edit", to: "posts#edit", as: :edit_post
   get "/posts/:id",   to: "posts#show", as: :post
   put "/posts/:id",   to: "posts#update"
+  delete "/posts/:id", to: "posts#destroy", as: :delete_post
   post "/posts",      to: "posts#create"
 
 
