@@ -2,7 +2,7 @@
 module WeatherHelper
   def get_weather
     time = DateTime.parse($redis.get("time_of_call"))
-    if Time.now - time >= 60
+    if Time.now - time >= 120
       weather = Wunderground.new(ENV["WUNDERGROUND_KEY"]).conditions_for("WA/Seattle")
       $redis.set("temperature", weather['current_observation']['temp_f'])
       $redis.set("description", weather['current_observation']['weather'])
