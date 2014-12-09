@@ -1,21 +1,16 @@
-<% if session[:user_id] != nil  %>
+<div class= "container">
+  <% if session[:user_id] != nil && current_user.status == "admin" %>
 
-<%= bootstrap_form_for @post do |f| %>
-<%= f.text_field :title %>
-<%= f.text_area :content %>
-<%= f.hidden_field :user_id, :value => current_user.id%>
-<%= f.submit %>
-<% end %>
+    <%= bootstrap_form_for @post, class: "new-post-form" do |f| %>
+    <%= f.text_field :title %>
+    <%= f.text_area :content %>
+    <%= f.hidden_field :user_id, :value => current_user.id%>
+    <%= f.submit %>
+    <% end %>
 
+  <% else %>
 
+    <div></div>
 
-
-
-<% else %>
-
-
-
-<div></div>
-
-
-<% end %>
+  <% end %>
+</div>

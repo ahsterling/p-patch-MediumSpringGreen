@@ -1,0 +1,11 @@
+<div class="container">
+
+  <%= bootstrap_form_for @post, method: :put do |f| %>
+
+    <%= f.text_field :title, label: "Title" %>
+    <%= f.text_area :content, label: "Content" %>
+    <%= f.submit %>
+
+  <% end %>
+
+</div>
