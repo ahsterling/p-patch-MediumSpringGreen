@@ -13,17 +13,11 @@ class PostsController < ApplicationController
   end
 
   def create
-    @users = User.all
+
     @post = Post.create(post_params)
 
     if @post.save
-
-      @users.each do |u|
-        user_id = u.id
-        post_id = @post.id
-        Resque.enqueue(EmailJob, user_id, post_id)
-      end
-
+      Resque.enqueue(EmailJob, post_id)
       redirect_to posts_path
     end
 

@@ -1,22 +1,27 @@
 class PostMailer < ActionMailer::Base
   default from: "PeaPlanner@garden.com"
 
-  def post_update(user_id, post_id)
-    @user= User.find(user_id)
+  def post_update( post_id)
+
     @post = Post.find(post_id)
 
     mail(
-      # to: "stephmpi@gmail.com",
-      # subject: "#{@post.user.name} just wrote a new post!"
-
-      to: @user.email,
+      to: user_emails,
       subject: "#{@post.user.name} just wrote a new post!"
+
+      # to: @user.email,
+      # subject: "#{@post.user.name} just wrote a new post!"
      )
-
-
-
   end
 
+  private
+
+  def user_emails
+    User.all.collect do |user|
+      user.email
+    end
+
+  end
 
 
 
