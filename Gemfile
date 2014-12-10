@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'dotenv-rails', :groups => [:development, :test]
+
 gem "omniauth"
 gem "omniauth-twitter"
 gem "faker"
@@ -41,7 +43,6 @@ end
 gem 'rails_12factor', group: :production
 
 # Keeps API Keys & secret private
-gem 'dotenv-rails', :groups => [:development, :test]
 
 
 group :development, :test do

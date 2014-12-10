@@ -20,6 +20,9 @@ set :output, "log/cron_log.log"
 # Learn more: http://github.com/javan/whenever
 
 every 1.minute do
-
   rake "weather"
+end
+
+every 1.minute do
+  runner "puts ENV['WUNDERGROUND_API_KEY']"
 end
