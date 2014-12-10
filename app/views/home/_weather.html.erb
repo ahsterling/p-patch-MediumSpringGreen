@@ -6,13 +6,13 @@
     <div class = "weather-info">
       <%= weather.temp %>° |
       <%= image_tag weather.icon, class: "weather-icon" %> |
-      <%= weather.description %> |
-      <span class="expand-forecast btn btn-xs btn-default">see forecast</span>
-      <span class="close-forecast btn btn-xs btn-default">close forecast</span>
+      <%= weather.description %>
+      <span class="expand-forecast btn btn-sm btn-default">see forecast</span>
+      <span class="close-forecast btn btn-sm btn-default">X</span>
     </div>
   </div>
   <div class= "forecast">
-    <table class="table table-bordered forecast-table">
+    <table class="table table-striped forecast-table">
       <tr>
         <th colspan="4">Forecast for Seattle, WA</th>
       </tr>
