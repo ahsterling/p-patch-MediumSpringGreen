@@ -3,6 +3,10 @@
     <h2><%= @post.title %></h2>
     <hr>
     <p><%= @post.content %></p>
+    <% if session[:user_id] != nil && current_user.status == "admin" %>
+      <%= link_to "Edit this Article", edit_post_path(@post.id), class: "btn btn-info" %>
+      <%= button_to "Delete this Article", delete_post_path(@post.id), method: :delete, class: "btn btn-danger" %>
+    <% end %>
   </div>
   <br>
 

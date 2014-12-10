@@ -1,11 +1,14 @@
 source 'https://rubygems.org'
 
+gem 'dotenv-rails', :groups => [:development, :test]
+
 gem "omniauth"
 gem "omniauth-twitter"
 gem "faker"
 gem 'httparty'
 
 gem 'wunderground'
+gem 'whenever', :require => false
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.5'
 # Use postgql as the database for Active Record
@@ -40,7 +43,6 @@ end
 gem 'rails_12factor', group: :production
 
 # Keeps API Keys & secret private
-gem 'dotenv-rails', :groups => [:development, :test]
 
 
 group :development, :test do
