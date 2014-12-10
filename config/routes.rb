@@ -44,8 +44,11 @@ Rails.application.routes.draw do
   put "/tools/:id",   to: "tools#update", as: :tool
 
   get "/posts",       to: "posts#index", as: :posts
-  get  "/posts/new",  to: "posts#new"
+  get  "/posts/new",  to: "posts#new", as: :new_post
+  get "/posts/:id/edit", to: "posts#edit", as: :edit_post
   get "/posts/:id",   to: "posts#show", as: :post
+  put "/posts/:id",   to: "posts#update"
+  delete "/posts/:id", to: "posts#destroy", as: :delete_post
   post "/posts",      to: "posts#create"
 
 

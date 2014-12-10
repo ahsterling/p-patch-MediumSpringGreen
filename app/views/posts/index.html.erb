@@ -1,6 +1,9 @@
 <div class="container">
   <div class="news-article">
     <h2>News!</h2>
+    <% if session[:user_id] != nil && current_user.status == "admin" %>
+      <%= link_to "Add a post", new_post_path, class: "btn btn-primary" %>
+    <% end %>
     <hr>
     <% @posts.each do |post| %>
       <h3><%= link_to post.title, post_path(post.id) %></h3>
