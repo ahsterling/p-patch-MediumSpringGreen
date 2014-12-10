@@ -9,7 +9,7 @@ class Weather
     $redis.set("temperature", weather['current_observation']['temp_f'])
     $redis.set("description", weather['current_observation']['weather'])
     $redis.set("icon", weather['current_observation']['icon_url'])
-    $redis.set("time_of_call", weather['current_observation']["observation_time_rfc822"])
+    $redis.set("time_of_call", Time.now)
 
 
   end

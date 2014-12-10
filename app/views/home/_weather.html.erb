@@ -5,4 +5,5 @@
   Current temp: <%= $redis.get("temperature") %>° |
   <%= image_tag $redis.get("icon"), class: "weather-icon" %> |
   <%= $redis.get("description") %>
+  <%= $redis.get("time_of_call") %>
 <% end %>
