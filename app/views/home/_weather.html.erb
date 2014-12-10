@@ -2,7 +2,7 @@
   <p>Weather currently unavailable, sorry! </p>
 <% else %>
   <strong>Seattle, WA</strong> |
-  <%= format_current_temp %> |
-  <%= image_tag $redis.get("icon"), class: "weather-icon" %> |
-  <%= $redis.get("description") %>
+  <%= weather.temp %>° |
+  <%= image_tag weather.icon, class: "weather-icon" %> |
+  <%= weather.description %>
 <% end %>
