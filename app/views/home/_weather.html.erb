@@ -1,8 +1,8 @@
-<% if temperature == "unavailable" %>
+<% if $redis.get("temperature") == "unavailable" %>
   <p>Weather currently unavailable, sorry! </p>
 <% else %>
   <strong>Seattle, WA</strong> |
-  Current temp: <%= $redis.get("temperature") %>° |
+  <%= format_current_temp %> |
   <%= image_tag $redis.get("icon"), class: "weather-icon" %> |
   <%= $redis.get("description") %>
 <% end %>
