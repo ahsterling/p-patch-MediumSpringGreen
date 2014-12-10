@@ -1,8 +1,42 @@
 <% if $redis.get("temperature") == "unavailable" %>
   <p>Weather currently unavailable, sorry! </p>
 <% else %>
-  <strong>Seattle, WA</strong> |
-  <%= weather.temp %>° |
-  <%= image_tag weather.icon, class: "weather-icon" %> |
-  <%= weather.description %>
+  <div class="current-weather">
+    <strong>Current weather for Seattle, WA</strong>:
+    <div class = "weather-info">
+      <%= weather.temp %>° |
+      <%= image_tag weather.icon, class: "weather-icon" %> |
+      <%= weather.description %> |
+      <span class="expand-forecast btn btn-xs btn-default">see forecast</span>
+      <span class="close-forecast btn btn-xs btn-default">close forecast</span>
+    </div>
+  </div>
+  <div class= "forecast">
+    <table class="table table-bordered forecast-table">
+      <tr>
+        <th colspan="4">Forecast for Seattle, WA</th>
+      </tr>
+      <tr>
+        <% weather.day_array.each do |day| %>
+          <th>
+            <%= day %>
+          </th>
+        <% end %>
+      </tr>
+      <tr>
+        <% weather.icon_array.each do |icon| %>
+          <td>
+            <%= image_tag icon, class: "weather-icon" %>
+          </td>
+        <% end %>
+      </tr>
+      <tr>
+        <% weather.condition_array.each do |condition| %>
+          <td>
+            <%= condition %>
+          </td>
+        <% end %>
+      </tr>
+    </table>
+  </div>
 <% end %>

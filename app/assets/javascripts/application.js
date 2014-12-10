@@ -20,4 +20,23 @@
 
 $(function() {
   $( "#event_datepicker" ).datepicker({dateFormat: 'yy-mm-dd'});
+
+  $(".forecast").hide();
+
+  $(".close-forecast").hide();
+
+  $(".expand-forecast").click( function() {
+    $(".forecast").toggle();
+    $(".expand-forecast").hide();
+    $(".close-forecast").show();
+    // $(".expand-forecast").toggleClass("close-forecast expand-forecast");
+  });
+
+  $(".close-forecast").click(function() {
+    $(".forecast").toggle();
+    $(".close-forecast").hide();
+    $(".expand-forecast").show();
+  });
+
+
 });

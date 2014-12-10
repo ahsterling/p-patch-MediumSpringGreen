@@ -156,13 +156,13 @@ button#cal_button a {
 
 .weather-bar {
   margin-right: 15px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 0;
+  margin-bottom: 15px;
   padding-left: 3px;
   padding-right: 3px;
   // padding-top: 5px;
   // padding-bottom: 5px;
-  background-color: rgba(255,255,255, .8);
+  background-color: rgba(186,222,152, .6);
   display: inline-block;
   border-radius: 3px;
 }
@@ -170,6 +170,10 @@ button#cal_button a {
 .weather-icon {
   padding: 3px;
   height: 40px;
+}
+
+.weather-info {
+  display: inline-block;
 }
 
 .new_event{
@@ -220,4 +224,9 @@ button#cal_button a {
 .new_post, .edit_post {
   background-color: rgba(186,222,152, .9);
   padding: 10px;
+}
+
+.forecast-table > tbody > tr > th, .forecast-table > tbody > tr > td {
+  padding: 2px;
+  text-align: center;
 }
