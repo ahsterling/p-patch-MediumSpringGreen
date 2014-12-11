@@ -2,17 +2,17 @@
 # for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
 
 require File.expand_path('../config/application', __FILE__)
-# require 'dotenv/tasks'
+
 Rails.application.load_tasks
 
 require "resque/tasks"
 task "resque:setup" => :environment
 
+require 'dotenv/tasks'
+task "weather" => [:environment, :dotenv] do
+  puts 'getting weather ....'
+  puts "Time: #{Time.now}"
 
-# task "weather" => [:environment, :dotenv] do
-#   puts 'getting weather ....'
-#   puts "Time: #{Time.now}"
-#
-#   Weather.get_weather
-#   Weather.get_forecast
-# end
+  Weather.get_weather
+  Weather.get_forecast
+end
