@@ -2,6 +2,7 @@ class Weather
 
   def self.get_weather
     weather = HTTParty.get("http://api.wunderground.com/api/#{ENV["WUNDERGROUND_API_KEY"]}/conditions/q/WA/seattle.json").parsed_response
+    puts ENV["WUNDERGROUND_API_KEY"]
 
     # w_api = Wunderground.new(ENV["WUNDERGROUND_API_KEY"])
     # w_api.throws_exceptions = true

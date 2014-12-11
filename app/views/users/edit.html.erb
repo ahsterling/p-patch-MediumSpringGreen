@@ -1,0 +1,43 @@
+
+
+<div  class="panel panel-success" id="user_account">
+  <div class="panel-heading">
+    <h3 class="panel-title">Edit Account Information </h3></div>
+
+    <table class="table table-hover">
+      <%= bootstrap_form_for(@user, label_errors: false, inline_errors: false) do |f|%>
+      <tr>
+        <td>
+          <%= f.text_field :name, label: "Username", icon: "user" %>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <%= f.text_field :email%><%= f.errors_on :email, hide_attribute_name: false %>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <%= f.password_field :password, label: "New Password" %><%= f.errors_on :password, hide_attribute_name: false %>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <%= f.password_field :password_confirmation %><%= f.errors_on :password_confirmation, hide_attribute_name: false %>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <%= f.submit "Save Changes"%>
+        </td>
+      </tr>
+
+      <% end %>
+
+    </table>
+
+  </div>

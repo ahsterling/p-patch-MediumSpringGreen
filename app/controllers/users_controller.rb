@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+
   def new
     @user = User.new
 
@@ -48,7 +49,35 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(session[:user_id])
+  end
 
+  def edit
+    @user = User.find(session[:user_id])
+  end
+
+  def update
+    @user = User.find(session[:user_id])
+    @user.password_signup = true
+    if @user.update(user_params)
+      redirect_to user_path(user_params), notice: "You have updated your information"
+    else
+      render :show
+    end
+
+  end
+
+  def request_admin_mail
+    @user = User.find(session[:user_id])
+    user_id = @user.id
+
+    Resque.enqueue(AdminEmailJob, user_id)
+    redirect_to user_path
+
+
+
+  end
 
   private
 
