@@ -26,14 +26,14 @@ $(function() {
   $(".close-forecast").hide();
 
   $(".expand-forecast").click( function() {
-    $(".forecast").toggle();
+    $(".forecast").slideDown();
     $(".expand-forecast").hide();
     $(".close-forecast").show();
     // $(".expand-forecast").toggleClass("close-forecast expand-forecast");
   });
 
   $(".close-forecast").click(function() {
-    $(".forecast").toggle();
+    $(".forecast").slideUp();
     $(".close-forecast").hide();
     $(".expand-forecast").show();
   });

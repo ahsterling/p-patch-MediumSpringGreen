@@ -160,6 +160,7 @@ button#cal_button a {
   margin-bottom: 15px;
   padding-left: 3px;
   padding-right: 3px;
+
   // padding-top: 5px;
   // padding-bottom: 5px;
   background-color: rgba(186,222,152, .6);
@@ -174,6 +175,11 @@ button#cal_button a {
 
 .weather-info {
   display: inline-block;
+}
+
+.current-weather {
+  // display: inline-block;
+  text-align: center
 }
 
 .new_event{
@@ -230,6 +236,46 @@ button#cal_button a {
   padding: 2px;
   text-align: center;
   background-color: rgb(186,222,152);
-  border: 1px solid #999999;
+  // border: 1px solid #999999;
   // border-color: #919191;
+}
+
+.forecast-table {
+  max-width: 500px;
+  margin: 5px auto 15px auto;
+}
+
+.btn-primary {
+  background-color: #894791;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #9e55ad;
+}
+
+.table-cell-link {
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+
+.table-cell-link:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.post-list-item a {
+  padding: 5px;
+}
+
+.post-list-item a {
+  display: block;
+  color: black;
+}
+
+.post-list-item a:hover {
+  background-color: whitesmoke;
+  text-decoration: none;
+  color: #9e55ad;
 }
