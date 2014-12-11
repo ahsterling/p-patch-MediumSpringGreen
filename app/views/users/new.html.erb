@@ -1,34 +1,36 @@
-<div class="row">
-  <div class = "col-xs-4">
-    <div class="login">
+<div class="container">
+  <div class="row new-user-content">
+    <div class = "col-sm-5">
+      <div class="login">
 
 
-    <%= bootstrap_form_for(@user, label_errors: false, inline_errors: false) do |f|%>
+      <%= bootstrap_form_for(@user, label_errors: false, inline_errors: false) do |f|%>
 
-    <div><%= f.text_field :name, label: "Username", icon: "user" %></div>
-
-
-
-    <div><%= f.text_field :email%><%= f.errors_on :email, hide_attribute_name: false %></div>
+      <div><%= f.text_field :name, label: "Username", icon: "user" %></div>
 
 
-    <div><%= f.password_field :password %><%= f.errors_on :password, hide_attribute_name: false %></div>
 
-    <div><%= f.password_field :password_confirmation %><%= f.errors_on :password_confirmation, hide_attribute_name: false %></div>
+      <div><%= f.text_field :email%><%= f.errors_on :email, hide_attribute_name: false %></div>
 
-    <div><%= f.submit %></div>
 
-    <% end %>
+      <div><%= f.password_field :password %><%= f.errors_on :password, hide_attribute_name: false %></div>
+
+      <div><%= f.password_field :password_confirmation %><%= f.errors_on :password_confirmation, hide_attribute_name: false %></div>
+
+      <div><%= f.submit %></div>
+
+      <% end %>
+      </div>
     </div>
-  </div>
 
 
-  <div class = "col-xs-2">
-    <h2>OR</h2>
-  </div>
-  <div class = "col-xs-4">
-    <div>
-      <%= link_to "Sign Up with Twitter", "/auth/twitter" , class: "btn btn-primary" %>
+    <div class = "col-sm-2">
+      <h2 style="text-align:center" class="or">OR</h2>
+    </div>
+    <div class = "col-sm-5">
+      <div>
+        <%= link_to "Sign Up with Twitter", "/auth/twitter" , class: "twitter-auth-button btn btn-primary btn-block" %>
+      </div>
     </div>
   </div>
 </div>
