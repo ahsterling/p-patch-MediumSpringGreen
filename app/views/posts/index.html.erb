@@ -1,13 +1,15 @@
 <div class="container">
   <div class="news-article">
-    <h2>News!
-      <span>
-        <% if session[:user_id] != nil && current_user.status == "admin" %>
-          <%= link_to "Add a post", new_post_path, class: "btn btn-primary" %>
-        <% end %>
-      </span>
-    </h2>
-
+    <div class="news-header">
+      <h2>News!
+        <span>
+          <% if session[:user_id] != nil && current_user.status == "admin" %>
+            <%= link_to "Add a post", new_post_path, class: "btn btn-primary" %>
+          <% end %>
+        </span>
+      </h2>
+    </div>
+    <hr>
     <% @posts.each do |post| %>
       <div class = "post-list-item">
         <a href = "<%= post_path(post.id) %>">

@@ -9,7 +9,13 @@
 body {
   margin: 40px;
   background-image: url("sweet-peas.jpg");
+}
 
+hr {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border: dashed;
+  border-color: whitesmoke;
 }
 
 .header h1 a{
@@ -217,8 +223,9 @@ button#cal_button a {
 
 .news-article {
   padding: 10px;
-  background-color: rgba(186,222,152, .9);
+  background-color: rgba(186,222,152, .6);
 }
+
 
 #disqus_thread {
   background-color: rgba(186,222,152, .9);
@@ -280,6 +287,7 @@ button#cal_button a {
 
 .post-list-item a {
   padding: 5px;
+  border-bottom: 1px solid whitesmoke;
 }
 
 .post-list-item a {
