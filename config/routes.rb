@@ -32,8 +32,20 @@ Rails.application.routes.draw do
 
 
 
-  get "/users/new",   to: "users#new", as: :users
-  post "/users/new",  to: "users#create"
+  get "/users/new",            to: "users#new", as: :users
+  post "/users/new",           to: "users#create"
+
+  get "/users/show",       to: "users#show", as: :user
+
+  get    "/users/:id/edit",  to: "users#edit"
+  post   "/users/:id/edit",  to: "users#edit"
+
+  put    "/users/:id/",      to: "users#update"
+  patch  "/users/show",      to: "users#update"
+
+  get "/users/show", to: "users#request_admin_mail", as: :admin_req
+  post "/users/show", to: "users#request_admin_mail"
+
 
   delete "/",         to: "home#destroy", as: :logout
 
