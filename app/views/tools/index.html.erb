@@ -20,7 +20,7 @@
                 <td><%= tool.status %></td>
                 <td>
                   <% if current_user != nil %>
-                    <%= button_to "Check me out!", tool_path(tool.id), method: :put, class: "btn btn-info", params: {status: "out"} %>
+                    <%= button_to "Check me out!", tool_path(tool.id), method: :put, class: "btn btn-primary", params: {status: "out"} %>
                   <% else %>
                     Sign up for an account to reserve tools!
                   <% end %>
