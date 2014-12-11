@@ -14,6 +14,17 @@ class PostMailer < ActionMailer::Base
      )
   end
 
+  def admin_request(user_id)
+    @user = User.find(user_id)
+    mail(
+    to: "stephmpi@gmail.com",
+    subject: "#{@user.name} wants Admin Access"
+
+    # to: @user.email,
+    # subject: "#{@post.user.name} just wrote a new post!"
+    )
+  end
+
   private
 
   def user_emails

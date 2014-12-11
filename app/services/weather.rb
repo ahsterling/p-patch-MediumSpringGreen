@@ -9,6 +9,7 @@ class Weather
       $redis.set("icon", "unavailable")
       return
     end
+
     $redis.set("temperature", weather['current_observation']['temp_f'])
     $redis.set("description", weather['current_observation']['weather'])
     $redis.set("icon", weather['current_observation']['icon_url'])
