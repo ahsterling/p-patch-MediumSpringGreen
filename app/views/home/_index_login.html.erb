@@ -29,6 +29,8 @@
         <%= button_to "Logout", logout_path,
         :method => :delete,
         class: "btn btn-danger" %>
+        <%= button_to "MyAccount", user_path,
+        class: "btn btn-success" %>
 
         <% else  %>
         <li>
@@ -67,9 +69,6 @@
         </li>
         <% end %>
         <li>
-          <div class="weather-bar">
-            <%= render "home/weather" %>
-          </div>
         </li>
 
       </ul>

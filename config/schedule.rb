@@ -22,7 +22,3 @@ set :output, "log/cron_log.log"
 every 1.minute do
   rake "weather"
 end
-
-every 1.minute do
-  runner "puts ENV['WUNDERGROUND_API_KEY']"
-end
