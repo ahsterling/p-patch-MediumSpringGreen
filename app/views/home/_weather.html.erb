@@ -1,4 +1,4 @@
-<% if $redis.get("temperature") == "unavailable" %>
+<% if Resque.redis.get("temperature") == "unavailable" %>
   <p>Weather currently unavailable, sorry! </p>
 <% else %>
   <div class="current-weather">
