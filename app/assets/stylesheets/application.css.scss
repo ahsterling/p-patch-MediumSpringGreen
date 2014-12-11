@@ -244,3 +244,38 @@ button#cal_button a {
   max-width: 500px;
   margin: 5px auto 15px auto;
 }
+
+.btn-primary {
+  background-color: #894791;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #9e55ad;
+}
+
+.table-cell-link {
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+
+.table-cell-link:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.post-list-item a {
+  padding: 5px;
+}
+
+.post-list-item a {
+  display: block;
+  color: black;
+}
+
+.post-list-item a:hover {
+  background-color: whitesmoke;
+  text-decoration: none;
+  color: #9e55ad;
+}
