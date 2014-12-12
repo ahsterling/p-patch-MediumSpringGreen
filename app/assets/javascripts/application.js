@@ -61,6 +61,7 @@ $(function() {
       success: function() {
         console.log("tool checked out");
         $tool.hide();
+        
         $table.append("<tr class='unavailable-tool'><td>" + $name + "</td><td>" + $status + "</td></tr>");
       }
     });
