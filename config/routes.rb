@@ -53,7 +53,7 @@ Rails.application.routes.draw do
   post "home/login",   to: "home#login"
 
   get "/tools",       to: "tools#index", as: :tools
-  put "/tools/:id",   to: "tools#update", as: :tool
+  post "/tools/:id",   to: "tools#update", as: :tool
 
   get "/posts",       to: "posts#index", as: :posts
   get  "/posts/new",  to: "posts#new", as: :new_post

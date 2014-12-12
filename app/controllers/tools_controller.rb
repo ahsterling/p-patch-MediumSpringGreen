@@ -1,8 +1,8 @@
 class ToolsController < ApplicationController
 
   def index
-    @available_tools = Tool.where(status: "in")
-    @unavailable_tools = Tool.where(status: "out")
+    @available_tools = Tool.order(status: :asc)
+    @unavailable_tools = Tool.order(status: :desc)
   end
 
   def update

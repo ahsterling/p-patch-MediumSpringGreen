@@ -4,23 +4,24 @@
       <div class = "tools-table">
 
         <h3>Currently available tools:</h3>
+        <hr>
         <% if @available_tools.empty? %>
           <p>There are no tools available!</p>
         <% else %>
 
-          <table class="table table-hover">
+          <table class="table table-hover" id="available-tools-list">
             <tr>
               <th>Tool Name</th>
               <th>Status</th>
               <th>Check Out</th>
             </tr>
             <% @available_tools.each do |tool| %>
-              <tr>
-                <td><%= tool.name %></td>
-                <td><%= tool.status %></td>
+              <tr id = "<%= tool.id %>" class="tool <%= 'available' if tool.status == "in" %> <%= 'unavailable' if tool.status == "out" %>">
+                <td class="tool-name"><%= tool.name %></td>
+                <td class="tool-status"><%= tool.status %></td>
                 <td>
                   <% if current_user != nil %>
-                    <%= button_to "Check me out!", tool_path(tool.id), method: :put, class: "btn btn-primary", params: {status: "out"} %>
+                    <%= button_to "Check me out!", tool_path(tool.id), method: :post, class: "btn btn-primary check-out", params: {status: "out"} %>
                   <% else %>
                     Sign up for an account to reserve tools!
                   <% end %>
@@ -35,26 +36,29 @@
     <div class = "col-md-6">
       <div class = "tools-table">
         <h3>Unavailable tools:</h3>
+        <hr>
         <% if @unavailable_tools.empty? %>
           <p>All the tools are checked in!</p>
         <% else %>
-          <table class="table table-hover">
+          <table class="table table-hover" id = "unavailable-tools-list">
             <tr>
               <th>Tool Name</th>
               <th>Status</th>
               <th>Checked out to:</th>
             </tr>
             <% @unavailable_tools.each do |tool| %>
-              <tr>
-                <td><%= tool.name %></td>
-                <td><%= tool.status %></td>
+              <tr id = "<%= tool.id %>"class="tool <%= 'unavailable' if tool.status == "out" %> <%= 'available' if tool.status == "in" %>">
+                <td class="tool-name"><%= tool.name %></td>
+                <td class="tool-status"><%= tool.status %></td>
                 <td>
+                  <% if current_user != nil && tool.user_id == current_user.id %>
+                    <%= button_to "Return this tool!", tool_path(tool.id), method: :post, class: "btn btn-danger check-in", params: {status: "in"} %>
+                  <% elsif tool.status == "in" %>
+                    <%= button_to "Return this tool!", tool_path(tool.id), method: :post, class: "btn btn-danger check-in", params: {status: "in"} %>
 
-                <% if current_user != nil && tool.user_id == current_user.id %>
-                  <%= button_to "Return this tool!", tool_path(tool.id), method: :put, class: "btn btn-danger", params: {status: "in"} %>
-                <% else %>
-                  <%= tool.user_id %>
-                <% end %>
+                  <% else %>
+                    <%= tool.user_id %>
+                  <% end %>
                 </td>
               </tr>
             <% end %>
