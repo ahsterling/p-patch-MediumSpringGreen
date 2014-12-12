@@ -8,19 +8,19 @@
           <p>There are no tools available!</p>
         <% else %>
 
-          <table class="table table-hover">
+          <table class="table table-hover available-tools-list">
             <tr>
               <th>Tool Name</th>
               <th>Status</th>
               <th>Check Out</th>
             </tr>
             <% @available_tools.each do |tool| %>
-              <tr>
-                <td><%= tool.name %></td>
-                <td><%= tool.status %></td>
+              <tr class="available-tool">
+                <td class="tool-name"><%= tool.name %></td>
+                <td class="tool-status"><%= tool.status %></td>
                 <td>
                   <% if current_user != nil %>
-                    <%= button_to "Check me out!", tool_path(tool.id), method: :put, class: "btn btn-primary", params: {status: "out"} %>
+                    <%= button_to "Check me out!", tool_path(tool.id), method: :post, class: "btn btn-primary check-out", params: {status: "out"} %>
                   <% else %>
                     Sign up for an account to reserve tools!
                   <% end %>
@@ -38,20 +38,20 @@
         <% if @unavailable_tools.empty? %>
           <p>All the tools are checked in!</p>
         <% else %>
-          <table class="table table-hover">
+          <table class="table table-hover" id = "unavailable-tools-list">
             <tr>
               <th>Tool Name</th>
               <th>Status</th>
               <th>Checked out to:</th>
             </tr>
             <% @unavailable_tools.each do |tool| %>
-              <tr>
-                <td><%= tool.name %></td>
-                <td><%= tool.status %></td>
+              <tr class="unavailable-tool">
+                <td class="tool-name"><%= tool.name %></td>
+                <td class="tool-status"><%= tool.status %></td>
                 <td>
 
                 <% if current_user != nil && tool.user_id == current_user.id %>
-                  <%= button_to "Return this tool!", tool_path(tool.id), method: :put, class: "btn btn-danger", params: {status: "in"} %>
+                  <%= button_to "Return this tool!", tool_path(tool.id), method: :post, class: "btn btn-danger", params: {status: "in"} %>
                 <% else %>
                   <%= tool.user_id %>
                 <% end %>

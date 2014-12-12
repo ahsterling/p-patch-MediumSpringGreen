@@ -38,5 +38,33 @@ $(function() {
     $(".expand-forecast").show();
   });
 
+  $(".check-out").click(function(e) {
+    e.preventDefault();
+    var $btn = $(this);
+    var $form = $btn.parents("form");
+    console.log($form);
+    var $url = $btn.parents("form").attr("action");
+    console.log($url);
+    var $tool = $form.parents("tr");
+    console.log($tool);
+    var $name = $tool.children(".tool-name").html();
+    console.log($name);
+    var $status = $tool.children(".tool-status").html();
+    console.log($status);
+
+    var $table = $("#unavailable-tools-list");
+    console.log($table);
+
+    $.ajax($url,  {
+      type: "POST",
+      data: $form.serialize(),
+      success: function() {
+        console.log("tool checked out");
+        $tool.hide();
+        $table.append("<tr class='unavailable-tool'><td>" + $name + "</td><td>" + $status + "</td></tr>");
+      }
+    });
+  });
+
 
 });
