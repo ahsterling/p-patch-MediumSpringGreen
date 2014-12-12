@@ -67,7 +67,6 @@ $(function() {
         console.log($updatedTool.html());
         $updatedTool.find(".tool-status").html("<td class='tool-status'>out</td>");
         $updatedTool.show();
-        // $table.append("<tr class='unavailable-tool'><td>" + $name + "</td><td>" + $status + "</td><td>" + button + "</td></tr>");
       }
     });
   });
@@ -89,10 +88,6 @@ $(function() {
       type: "POST",
       data: $form.serialize(),
       success: function() {
-        // console.log("tool checked in");
-        // $tool.hide();
-        // var button = '<form action="/tools/5" class="button_to" method="post"><div><input class="btn btn-primary check-out" type="submit" value="Check me out!"><input name="authenticity_token" type="hidden" value="ecser3wJTag745oPo8bMUGKWItoSjG1LaJWBhjljVoI="><input name="status" type="hidden" value="out"></div></form>';
-        // $table.append("<tr class='unavailable-tool'><td>" + $name + "</td><td>" + $status + "</td><td>" + button + "</td></tr>");
 
         console.log("tool checked in");
         $tool.removeClass("unavailable");
