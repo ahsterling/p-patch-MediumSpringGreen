@@ -62,6 +62,17 @@ ul.nav.navbar-nav.navbar-right {
 
 }
 
+.logout {
+  margin-top: 3px;
+  margin-left: 3px;
+
+}
+
+.my-account {
+  margin-top: 3px;
+  margin-left: 3px;
+}
+
 .login_field {
   display:inline-block;
 }
@@ -83,6 +94,7 @@ ul.nav.navbar-nav.navbar-right {
   // background-color: rgba(186,222,152, .6);
   width: 100%;
   padding: 5px;
+  margin-top: 20px;
 }
 
 .twitter {
@@ -203,7 +215,7 @@ button#cal_button a {
 }
 
 .tools-table {
-  background-color: rgba(186,222,152, .9);
+  background-color: rgba(186,222,152, .6);
   padding: 10px;
   border-radius: 3px;
 }
@@ -221,6 +233,18 @@ button#cal_button a {
   display: inline-block;
 }
 
+.home-page {
+  margin-left: -30px;
+  margin-right: -30px;
+  margin-top: -15px;
+
+}
+
+.home-page a:hover {
+  text-decoration: none;
+  color: #894791;
+}
+
 .news-article {
   padding: 10px;
   background-color: rgba(186,222,152, .6);
@@ -228,7 +252,7 @@ button#cal_button a {
 
 
 #disqus_thread {
-  background-color: rgba(186,222,152, .9);
+  background-color: rgba(186,222,152, .6);
   // color: black;
   padding: 10px;
 }
@@ -238,7 +262,7 @@ button#cal_button a {
 }
 
 .new_post, .edit_post {
-  background-color: rgba(186,222,152, .9);
+  background-color: rgba(186,222,152, .6);
   padding: 10px;
 }
 
@@ -315,4 +339,16 @@ button#cal_button a {
 
 .new-user-content {
   background-color: rgba(186,222,152, .6);
+}
+
+@media (max-width: 898px) {
+  .new_account {
+    margin-top: 0;
+    margin-bottom: 3px;
+  }
+
+  .twitter-button {
+    margin-top: 0;
+    margin-bottom: 3px;
+  }
 }
