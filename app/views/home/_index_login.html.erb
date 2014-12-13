@@ -26,21 +26,26 @@
         </div>
 
         <% if session[:user_id] != nil  %>
-        <%= button_to "Logout", logout_path,
-        :method => :delete,
-        class: "btn btn-danger" %>
-        <%= button_to "MyAccount", user_path,
-        class: "btn btn-success" %>
+        <li>
+          <%= button_to "My Account", user_path,
+          class: "btn btn-success my-account" %>
+        </li>
+        <li>
+          <%= button_to "Logout", logout_path,
+          :method => :delete,
+          class: "btn btn-danger logout" %>
+        </li>
+
 
         <% else  %>
         <li>
           <%= bootstrap_form_for @login_user, url: login_path, class: "navbar-form navbar-right" do |f|%>
             <div class = "login_field">
-              <%= f.text_field :name, placeholder: "Name" %>
+              <%= f.text_field :name, placeholder: "Name", hide_label: true %>
             </div>
 
             <div class = "login_field">
-              <%= f.password_field :password, placeholder: "Password" %>
+              <%= f.password_field :password, placeholder: "Password", hide_label: true %>
             </div>
 
             <div class = "login_field" >
@@ -68,8 +73,6 @@
 
         </li>
         <% end %>
-        <li>
-        </li>
 
       </ul>
 

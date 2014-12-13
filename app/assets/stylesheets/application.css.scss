@@ -62,6 +62,17 @@ ul.nav.navbar-nav.navbar-right {
 
 }
 
+.logout {
+  margin-top: 3px;
+  margin-left: 3px;
+
+}
+
+.my-account {
+  margin-top: 3px;
+  margin-left: 3px;
+}
+
 .login_field {
   display:inline-block;
 }
@@ -83,6 +94,7 @@ ul.nav.navbar-nav.navbar-right {
   // background-color: rgba(186,222,152, .6);
   width: 100%;
   padding: 5px;
+  margin-top: 20px;
 }
 
 .twitter {
@@ -327,4 +339,16 @@ button#cal_button a {
 
 .new-user-content {
   background-color: rgba(186,222,152, .6);
+}
+
+@media (max-width: 898px) {
+  .new_account {
+    margin-top: 0;
+    margin-bottom: 3px;
+  }
+
+  .twitter-button {
+    margin-top: 0;
+    margin-bottom: 3px;
+  }
 }
